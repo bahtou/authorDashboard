@@ -1,10 +1,20 @@
-var express = require('express')
+var env = process.env.NODE_ENV || 'development'
+  , express = require('express')
   , routes = require('./routes')
-  , user = require('./routes/user')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+  , config = require('./config')[env]
+  , mongo = require('./models/mongoDB');
 
 var app = express();
+
+// mongoDB connection
+// mongo.connect(config.mongodb, function(err) {
+//   if (err) {
+//     throw err;
+//   }
+//   console.info('Connected to Mongo');
+// });
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
@@ -19,11 +29,10 @@ app.configure(function(){
 });
 
 app.configure('development', function(){
-  app.use(express.errorHandler());
+  app.use(express.errorHandler({showStack: true, dumpExceptions: true}));
 });
 
-app.get('/', routes.index);
-app.get('/users', user.list);
+routes(app);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

@@ -1,8 +1,11 @@
+module.exports = function(app) {
 
-/*
- * GET home page.
- */
+  // home
+  app.get('/', index);
 
-exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+  // helper functions
+  function index(req, res) {
+    res.render('index', {title: 'Express'} );
+  }
+
 };
