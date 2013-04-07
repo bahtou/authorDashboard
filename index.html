@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href='http://fonts.googleapis.com/css?family=Dosis:200' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div id="title">
+		<div id="navbar">
+			<nav>
+				<ul id="nav">
+					<a href="#"><li>Messages</li></a>
+					<a href="#"><li>Account</li></a>
+						<ul class="dropdown">
+							<a href="#"><li>Account Settings</li></a>
+							<a href="#"><li>Privacy Settings</li></a>
+							<a href="#"><li>Login/out</li></a>
+						</ul>
+				</ul>
+			</nav>
+		</div>
+		<h1>talent<span id="color">Bot</span>.co</h1>
+	</div>
+	<div id="mainwrap">
+		<div id="wrappershadow">
+		<div id="wrapper">
+			<header>
+
+			</header>
+			<div id="container">
+				<div class="profile">
+					<div class="profileblurb">
+					
+							<!--INSERT AJAX REQUEST FOR AUTHOR NAME-->
+							
+						<h1 id="authorname">Eric Greitens</h1>
+						
+							<!--INSERT AJAX REQUEST FOR AUTHOR IMAGE-->
+							
+						<img src = egreitens.png />
+						
+							<!--INSERT AJAX REQUEST FOR AUTHOR INFO-->
+							
+						<p>Eric Greitens was born and raised in Missouri. After earning a Ph.D. as 
+						a Rhodes Scholar and serving as a humanitarian volunteer overseas, Eric 
+						joined the Navy SEALs. A boxing champion and a decorated combat veteran, he 
+						is the founder of the nonprofit The Mission Continues and the author of the 
+						New York Times bestseller The Heart and the Fist.</p>
+					
+						<a href="#">
+							<div class="buttons">
+								<h3>Edit Library</h3>
+							</div>
+						</a>
+						<a href="#">
+							<div class="buttons">
+								<h3>Edit Profile</h3>
+							</div>
+						</a>
+					
+					</div>
+					
+					<div class="authorlibrary">
+					
+					<!--INSERT AJAX REQUEST FOR BOOK COVERS AND INFORMATION-->
+						
+						<ul>
+							<a href = "#">
+								<li><img src = heartandfist.png /></li>
+							</a>
+						</ul
+						<a id="prev2" class="prev" href="#">&lt;</a>
+						<a id="next2" class="next" href="#">&gt;</a>
+						
+					</div>
+
+					<div class="readerlibrary">
+
+					<!--INSERT AJAX REQUEST FOR BOOK COVERS AND INFORMATION-->
+						
+						<ul>
+							<a href = "#">
+								<li><img src = heartandfist.png /></li>
+							</a>
+						</ul
+						<a id="prev2" class="prev" href="#">&lt;</a>
+						<a id="next2" class="next" href="#">&gt;</a>
+
+					</div>
+
+					<div class="authormetrics">
+					
+					<!--INSERT AJAX REQUEST FOR DYNAMIC AUTHOR AND BOOK METRICS-->
+					
+					</div>
+					
+				
+				
+				
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div id="footwrap">
+	</div>
+			
+</body>
+</html>
+
+<script>
+$(function () {
+	$(".authorlibrary ul li").carouFredSel({
+		height: "auto",
+		items: {
+			visible: 4,
+			minimum: 1
+		},
+		scroll: 500,
+		auto: false,
+		next: ".next",
+		prev: ".prev"
+	});
+)};
+</script>
