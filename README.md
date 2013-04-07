@@ -1,3 +1,0 @@
-#Author Dashboard
-
-> getting started
