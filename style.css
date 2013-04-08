@@ -1,18 +1,12 @@
 * {
   margin: 0;
   padding: 0;
-<<<<<<< HEAD
-  }
-=======
-	}
->>>>>>> d2e97422085905757b16e7e548743f7bc911064c
 
 /************
 Page Styles
 *************/
 
 body {
-<<<<<<< HEAD
   margin: 0;
   color: #000;
   font-family: arial, helvetica, sans-serif;
@@ -79,7 +73,7 @@ blockquote {
   position: relative;
   z-index: 1;
   }
-=======
+
 	margin: 0;
 	color: #000;
 	font-family: arial, helvetica, sans-serif;
@@ -146,14 +140,12 @@ blockquote {
 	position: relative;
 	z-index: 1;
 	}
->>>>>>> d2e97422085905757b16e7e548743f7bc911064c
 
 /************
 Header
 *************/
 
 #title {
-<<<<<<< HEAD
   font-size: 2.6em;
   color: #f0f0f0;
   width: 100%;
@@ -305,7 +297,7 @@ nav li {
   position: relative;
   z-index: 10;
   }
-=======
+
 	font-size: 2.6em;
 	color: #f0f0f0;
 	width: 100%;
@@ -457,5 +449,3 @@ nav li {
 	position: relative;
 	z-index: 10;
 	}
->>>>>>> d2e97422085905757b16e7e548743f7bc911064c
-
