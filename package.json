@@ -1,0 +1,35 @@
+{
+  "name": "authorDashboard",
+  "version": "0.0.1",
+  "private": true,
+  "authors": {
+    "name": ["bahtou", "coughlinc"],
+    "email": ["bahtou@nym.hush.com", "coughlin.christopher@gmail.com"]
+    },
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [
+    "libbo",
+    "author",
+    "dashboard",
+    "MVP"
+    ],
+  "description": "author dashboard for minimum viable product for libbo",
+  "dependencies": {
+    "express": "3.1.0",
+    "jade": "*",
+    "mongoose": "~3.6.2"
+  },
+  "repository" : {
+    "type": "git",
+    "url": "https://github.com/bahtou/authorDashboard"
+  },
+  "engines": {
+    "node": "0.10.0"
+  },
+  "bugs": {
+    "mail": "bahtou@nym.hush.com",
+    "url": "https://github.com/bahtou/authorDashboard/issues"
+    }
+}
