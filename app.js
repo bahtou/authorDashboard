@@ -9,12 +9,12 @@ var env = process.env.NODE_ENV || 'development'
 var app = express();
 
 // mongoDB connection
-// mongo.connect(config.mongodb, function(err) {
-//   if (err) {
-//     throw err;
-//   }
-//   console.info('Connected to Mongo');
-// });
+mongo.connect(config.mongodb, function(err) {
+  if (err) {
+    throw err;
+  }
+  console.info('Connected to Mongo');
+});
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);

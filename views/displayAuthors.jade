@@ -1,0 +1,18 @@
+doctype 5
+html
+  include includes/head
+  body
+    a.btn.btn-info(href="/inputForm") Back
+    each author, i in aInfo
+      if author.books[0]
+        h2 Author name
+        h4.fName= author.name
+        h4 Title
+          .title= author.books[0].title
+        h5 Genre
+          .genre= author.books[0].genre
+        h5 Description
+        p= author.books[0].desc
+        h5 Image Location
+        a(src="author.books[0].img") author.books[0].img
+    include includes/footer
