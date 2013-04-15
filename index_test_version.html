@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>talentBot.co</title>
+	<title>talentBot.co TESTING</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href='http://fonts.googleapis.com/css?family=Dosis:200' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
@@ -20,13 +20,11 @@
 				<ul id="nav">
 					<a href="#"><li>Messages</li></a>
 					<a href="#"><li>Account</li></a>
-						<span id="dd">
-							<ul class="acct_dropdown">
-								<a href="#"><li>Account Settings</li></a>
-								<a href="#"><li>Privacy Settings</li></a>
-								<a href="#"><li>Login/out</li></a>
-							</ul>
-						</span>
+						<ul class="acct_dropdown">
+							<a href="#"><li>Account Settings</li></a>
+							<a href="#"><li>Privacy Settings</li></a>
+							<a href="#"><li>Login/out</li></a>
+						</ul>
 				</ul>
 			</nav>
 		</div>
@@ -42,13 +40,15 @@
 				<div class="profile">
 					<div class="profileblurb">
 					
-<!-- MAKE ALL AUTHOR/USER INFORMATION DYNAMIC FROM SCRIPTS							 -->
-
+							<!--INSERT AJAX REQUEST FOR AUTHOR NAME-->
+							
 						<h1 id="authorname">Eric Greitens</h1>
 						
+							<!--INSERT AJAX REQUEST FOR AUTHOR IMAGE-->
 							
 						<img src = images/egreitens.png />
 						
+							<!--INSERT AJAX REQUEST FOR AUTHOR INFO-->
 							
 						<p>Eric Greitens was born and raised in Missouri. After earning a Ph.D. as 
 						a Rhodes Scholar and serving as a humanitarian volunteer overseas, Eric 
@@ -70,24 +70,21 @@
 					</div>
 					
 					<div class="authorlibrary">
-
 						<div class="tabs">
-							<ul>
-								<li><a href="#" data-container="author_lib">Your Books</a></li>
-								<li><a href="#" data-container="scout_lib">Books You've Scouted</a></li>
-								<li><a href="#" data-container="queue_lib">Your Queue</a></li>
-							</ul>
-						</div>
+									<a href"javascript:tabSwitch('tab_1', 'content_1');" id="tab_1" class="active"><li>Your Books</li></a>
+									<a href="#"><li>Books You've Reviewed</li></a>
+									<a href="#"><li>Your Review Queue</li></a>
 
-<!-- Tab 1 -->
-  						<div class='carousel_container' id="author_lib">
+					<!--INSERT AJAX REQUEST FOR BOOK COVERS AND INFORMATION-->
+						<div class="content">
+  						<div id='carousel_container'>
   							<div id='left_scroll'><img src='left.png' /></div>
     						<div id='carousel_inner'>
        					 		<ul id='carousel_ul'>
-       					 				<section id='thumbnails'>
-												</section>  						
+       					 					<section id='thumbnails'>
+													</section>  										
         						</ul>	
-        						<section class='details' style='display:none;'>
+        						<section id='details' style='display:none;'>
 											<h2>Title: <span id='title'></span></h2>
 											<h3>Author: <span id='authorName'></span></h3>
 											<h4>Description: <span id='description'></span></h4>
@@ -95,82 +92,48 @@
     						</div>
   							<div id='right_scroll'><img src='right.png' /></div>
  						 </div>
+
+ 						</div>
 						
-<!-- Tab 2 -->
-
- 						 <div class='carousel_container' id="scout_lib">
-  							<div id='left_scroll'><img src='left.png' /></div>
-    						<div id='carousel_inner'>
-       					 		<ul id='carousel_ul'>
-       					 				<section id='thumbnails'>
-												</section>  				
-        						</ul>	
-        						<section class='details' style='display:none;'>
-											<h2>Title: <span id='title'></span></h2>
-											<h3>Author: <span id='authorName'></span></h3>
-											<h4>Description: <span id='description'></span></h4>
-  										</section>
-    						</div>
-  							<div id='right_scroll'><img src='right.png' /></div>
- 						 </div>
-
-<!-- Tab 3 -->
-
- 						 <div class='carousel_container' id="queue_lib">
-  							<div id='left_scroll'><img src='left.png' /></div>
-    						<div id='carousel_inner'>
-       					 		<ul id='carousel_ul'>
-       					 				<section id='thumbnails'>
-												</section>  						
-        						</ul>	
-        						<section class='details' style='display:none;'>
-											<h2>Title: <span id='title'></span></h2>
-											<h3>Author: <span id='authorName'></span></h3>
-											<h4>Description: <span id='description'></span></h4>
-  										</section>
-    						</div>
-  							<div id='right_scroll'><img src='right.png' /></div>
- 						 </div>
+								</ul>
+							</div>
+						</div>
 
 					</div>
 
 					<div class="authormetrics">
-						
 						<div id="metric_tabs" class="tabs">
 							<ul>
-								<a href="#"><li>Author Metrics</li></a>
-								<a href="metrics.html"><li>Scout Metrics</li></a>
+								<a href="#"><li id="author_tab">Author Metrics</li></a>
+								<a href="#"><li>Scout Metrics</li></a>
 							</ul>
-						</div>
-
-						<div class="book_cover">
-							<a href="#"><img src = https://www.libboo.com//inhouse/book_image_cover/c8e51778-027c-11e2-8fab-1231390c5871_4.png /></a>
-						</div>
-
-<!-- METRIC DROPDOWN MENUS -->
-
-						<div class="dropdowns">
-							<form name="menuform">
-								<select name="Graph Options" class="metric_dropdown">
-											<option value="1_to_all" selected>Individual to Entire Library</option>
-											<option value ="1_mood">Individual Mood Metrics</option>
-									</select>
-							</form>
-						</div>
+						</div>	
 									
-						<div class="dropdowns">
-							<form name="menuform2">
-								<select name="Books" class="metric_dropdown">>
-										<option value="1">The Heart and the Fist</option>
-										<option value="2">Anonymous Book 2</option>
+<!-- 						<div class="dropdowns">
+							<form name="menuform">
+								<select name="Books" 
+									onChange="top.location.href = this.form.books.options[this.form.books.selectedIndex].value;
+									return false;">
+										<option value="#" selected>Books</option>
+										<option value="#">The Heart and the Fist</option>
+										<option value="#">The Heart and the Fist</option>
 								</select>
 							</form>
 						</div>
 
-<!-- Metric Graphs/Charts -->
+						<div class="dropdowns">
+							<form name="menuform2">
+								<select name="Books_reviewed" 
+									onChange="top.location.href = this.form.books_reviewed.options[this.form.books_reviewed.selectedIndex].value;
+									return false;">
+										<option value="#" selected>Graph Options</option>
+									</select>
+							</form>
+						</div> -->
 
+					<!--INSERT AJAX REQUEST FOR DYNAMIC AUTHOR AND BOOK METRICS-->
 						<div id="total_metric">
-							<canvas id="metricsChart" width="630" height="360"></canvas>
+							<canvas id="metricsChart" width="630" height="400"></canvas>
 						</div>
 					
 					</div>
@@ -180,7 +143,6 @@
 		</div>
 	</div>
 	</div>
-
 	<div id="footwrap">
 		<div class="social_buttons">
 			<span class='st_twitter_large' displayText='Tweet'></span>
