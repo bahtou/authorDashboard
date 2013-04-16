@@ -2,7 +2,7 @@
 html(lang='en')
   head
     title talentBot.co
-    link(rel='stylesheet', type='text/css', href='style.css')
+    link(rel='stylesheet', type='text/css', href='_css/style.css')
     link(href='http://fonts.googleapis.com/css?family=Dosis:200', rel='stylesheet', type='text/css')
     link(href='http://fonts.googleapis.com/css?family=Josefin+Sans', rel='stylesheet', type='text/css')
     link(href='http://fonts.googleapis.com/css?family=EB+Garamond', rel='stylesheet', type='text/css')
@@ -10,8 +10,8 @@ html(lang='en')
     script(type='text/javascript')
       stLight.options({publisher: "ur-cb388504-ac6d-94ca-99b3-7976bc6a12cf", doNotHash: false, doNotCopy: false, hashAddressBar: false});
     script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
-    script(type='text/javascript', src='script.js')
-    script(src='Chart.js-master/Chart.js')
+    script(type='text/javascript', src='_js/script.js')
+    script(src='_js/Chart.min.js')
   body
     #header
       #navbar
@@ -43,7 +43,7 @@ html(lang='en')
                 //
                    MAKE ALL AUTHOR/USER INFORMATION DYNAMIC FROM SCRIPTS               
                 h1#authorname Eric Greitens
-                img(src='images/egreitens.png')
+                img(src='_imgs/egreitens.png')
                 p
                   | Eric Greitens was born and raised in Missouri. After earning a Ph.D. as
                   | a Rhodes Scholar and serving as a humanitarian volunteer overseas, Eric
@@ -69,7 +69,7 @@ html(lang='en')
                    Tab 1 
                 #author_lib.carousel_container
                   #left_scroll
-                    img(src='left.png')
+                    img(src='_imgs/left.png')
                   #carousel_inner
                     ul#carousel_ul
                       section#thumbnails
@@ -84,12 +84,12 @@ html(lang='en')
                         | Description:
                         span#description
                   #right_scroll
-                    img(src='right.png')
+                    img(src='_imgs/right.png')
                 //
                    Tab 2 
                 #scout_lib.carousel_container
                   #left_scroll
-                    img(src='left.png')
+                    img(src='_imgs/left.png')
                   #carousel_inner
                     ul#carousel_ul
                       section#thumbnails
@@ -104,12 +104,12 @@ html(lang='en')
                         | Description:
                         span#description
                   #right_scroll
-                    img(src='right.png')
+                    img(src='_imgs/right.png')
                 //
                    Tab 3 
                 #queue_lib.carousel_container
                   #left_scroll
-                    img(src='left.png')
+                    img(src='_imgs/left.png')
                   #carousel_inner
                     ul#carousel_ul
                       section#thumbnails
@@ -124,13 +124,13 @@ html(lang='en')
                         | Description:
                         span#description
                   #right_scroll
-                    img(src='right.png')
+                    img(src='_imgs/right.png')
               .authormetrics
                 #metric_tabs.tabs
                   ul
                     a(href='#')
                       li Author Metrics
-                    a(href='metrics.html')
+                    a(href='/metrics')
                       li Scout Metrics
                 .book_cover
                   a(href='#')

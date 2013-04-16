@@ -5,13 +5,17 @@ module.exports = function(app) {
   // dashBoard
   app.get('/', index);
 
-// form
+  // metrics
+  app.get('/metrics', function(req, res) {
+    res.render('metrics');
+  });
+
+  // form
   app.get('/inputForm', function(req, res) {
     res.render('form', {
       title: 'Author Form'
     });
   });
-
   app.post('/postForm', function(req, res) {
     var author, genre, book, form = req.body;
 
@@ -32,9 +36,7 @@ module.exports = function(app) {
     });
   });
 
-
-// display list
-
+  // display list
   app.get('/authorList', function(req, res) {
     Author.find(function(err, authors) {
       if (err) return console.log("author list err:", err);
@@ -47,9 +49,7 @@ module.exports = function(app) {
 
   // helper functions
   function index(req, res) {
-    res.render('index', {
-      title: 'Author Dashboard'
-    });
+    res.render('chris');
   }
 
 };
