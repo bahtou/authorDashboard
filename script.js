@@ -1,51 +1,6 @@
 $(document).ready(function() {
 
-// DROPDOWN MENU--------------------------------//
-
-  // obj.dd.on('click', function(event) {
-  //   $(this).toggleClass('active');
-  //   return false;
-  // });
-
-  // $(function() {
-  //   var dd = new DropDown($('#dd'));
-  //   $('#nav').click(function() {
-  //     $('.acct_dropdown').removeClass('active');
-  //   });
-  // });
-
-  // $function DropDown(el) {
-  //   this.dd = el;
-  //   this.placeholder = this.dd.children('span');
-  //   this.opts = this.dd.find('ul.dropdown > li');
-  //   this.val = '';
-  //   this.index = -1;
-  //   this.initEvents();
-  // }
-
-  // DropDown.prototype = {
-  //   initEvents : function() {
-  //     var obj = this;
-
-  //     obj.dd.on('click', function(event) {
-  //       $(this).toggleClass('active');
-  //       return false;
-  //     });
-
-  //     obj.opts.on('click', function() {
-  //       var opt = $(this);
-  //       opj.val = opt.text();
-  //       opj.index = opt.index();
-  //       opj.placeholder.text(obj.val);
-  //     });
-  //   },
-  //   getValue : function() {
-  //     return this.val;
-  //   },
-  //   getIndex : function() {
-  //     return this.index;
-  //   }
-  // }
+// USER PROFILE DYNAMIC DATA--------------------//
 
 // CAROUSEL FUNCTIONALITY----------------------//
 
@@ -146,7 +101,6 @@ for (var i = 0; i < carouselArray.length; i++) {
     li.className = "item";
   li.appendChild(img);
   ul.appendChild(li);
-  
 }
  
     $("li.item").on('mouseover', function() {
@@ -180,7 +134,7 @@ $(".metric_dropdown").change(function() {
 
 });
   $("body").on("metric_filter_changed", function(e){
-    console.log(e.target.value);
+    console.log(e.target);
   });
 
 
