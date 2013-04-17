@@ -1,160 +1,130 @@
-!!! 5
-html(lang='en')
-  head
-    title talentBot.co
-    link(rel='stylesheet', type='text/css', href='_css/style.css')
-    link(href='http://fonts.googleapis.com/css?family=Dosis:200', rel='stylesheet', type='text/css')
-    link(href='http://fonts.googleapis.com/css?family=Josefin+Sans', rel='stylesheet', type='text/css')
-    link(href='http://fonts.googleapis.com/css?family=EB+Garamond', rel='stylesheet', type='text/css')
-    script(type='text/javascript', src='http://w.sharethis.com/button/buttons.js')
-    script(type='text/javascript')
-      stLight.options({publisher: "ur-cb388504-ac6d-94ca-99b3-7976bc6a12cf", doNotHash: false, doNotCopy: false, hashAddressBar: false});
-    script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
-    script(type='text/javascript', src='_js/script.js')
-    script(src='_js/Chart.min.js')
-  body
-    #header
-      #navbar
-        nav
-          ul#nav
-            a(href='#')
-              li Messages
-            a(href='#')
-              li Account
-            span#dd
-              ul.acct_dropdown
+extends layout
+
+block addToHead
+  script(type='text/javascript', src='_js/script.js')
+block bodyContent
+  #mainwrap
+    #wrappershadow
+      #wrapper
+        header
+        #container
+          .profile
+            .profileblurb
+              //
+                 MAKE ALL AUTHOR/USER INFORMATION DYNAMIC FROM SCRIPTS               
+              h1#authorname Eric Greitens
+              img(src='_imgs/egreitens.png')
+              p
+                | Eric Greitens was born and raised in Missouri. After earning a Ph.D. as
+                | a Rhodes Scholar and serving as a humanitarian volunteer overseas, Eric
+                | joined the Navy SEALs. A boxing champion and a decorated combat veteran, he
+                | is the founder of the nonprofit The Mission Continues and the author of the
+                | New York Times bestseller The Heart and the Fist.
+              a(href='#')
+                #lib_button.buttons
+                  h3 Edit Library
+              a(href='#')
+                #prof_button.buttons
+                  h3 Edit Profile
+            .authorlibrary
+              .tabs
+                ul
+                  li
+                    a(href='#', data-container='author_lib') Your Books
+                  li
+                    a(href='#', data-container='scout_lib') Books You've Scouted
+                  li
+                    a(href='#', data-container='queue_lib') Your Queue
+              //
+                 Tab 1 
+              #author_lib.carousel_container
+                #left_scroll
+                  img(src='_imgs/left.png')
+                #carousel_inner
+                  ul#carousel_ul
+                    section#thumbnails
+                  section.details(style='display: none;')
+                    h2
+                      | Title:
+                      span#title
+                    h3
+                      | Author:
+                      span#authorName
+                    h4
+                      | Description:
+                      span#description
+                #right_scroll
+                  img(src='_imgs/right.png')
+              //
+                 Tab 2 
+              #scout_lib.carousel_container
+                #left_scroll
+                  img(src='_imgs/left.png')
+                #carousel_inner
+                  ul#carousel_ul
+                    section#thumbnails
+                  section.details(style='display: none;')
+                    h2
+                      | Title:
+                      span#title
+                    h3
+                      | Author:
+                      span#authorName
+                    h4
+                      | Description:
+                      span#description
+                #right_scroll
+                  img(src='_imgs/right.png')
+              //
+                 Tab 3 
+              #queue_lib.carousel_container
+                #left_scroll
+                  img(src='_imgs/left.png')
+                #carousel_inner
+                  ul#carousel_ul
+                    section#thumbnails
+                  section.details(style='display: none;')
+                    h2
+                      | Title:
+                      span#title
+                    h3
+                      | Author:
+                      span#authorName
+                    h4
+                      | Description:
+                      span#description
+                #right_scroll
+                  img(src='_imgs/right.png')
+            .authormetrics
+              #metric_tabs.tabs
+                ul
+                  li
+                    a(href="#") Author Metrics
+                  li
+                    a(href="/metrics") Scout Metrics
+              .book_cover
                 a(href='#')
-                  li Account Settings
-                a(href='#')
-                  li Privacy Settings
-                a(href='#')
-                  li Login/out
-      h1
-        | scout
-        span#color Bot
-        | .co
-    #mainwrap
-      #wrappershadow
-        #wrapper
-          header
-          #container
-            .profile
-              .profileblurb
-                //
-                   MAKE ALL AUTHOR/USER INFORMATION DYNAMIC FROM SCRIPTS               
-                h1#authorname Eric Greitens
-                img(src='_imgs/egreitens.png')
-                p
-                  | Eric Greitens was born and raised in Missouri. After earning a Ph.D. as
-                  | a Rhodes Scholar and serving as a humanitarian volunteer overseas, Eric
-                  | joined the Navy SEALs. A boxing champion and a decorated combat veteran, he
-                  | is the founder of the nonprofit The Mission Continues and the author of the
-                  | New York Times bestseller The Heart and the Fist.
-                a(href='#')
-                  #lib_button.buttons
-                    h3 Edit Library
-                a(href='#')
-                  #prof_button.buttons
-                    h3 Edit Profile
-              .authorlibrary
-                .tabs
-                  ul
-                    li
-                      a(href='#', data-container='author_lib') Your Books
-                    li
-                      a(href='#', data-container='scout_lib') Books You've Scouted
-                    li
-                      a(href='#', data-container='queue_lib') Your Queue
-                //
-                   Tab 1 
-                #author_lib.carousel_container
-                  #left_scroll
-                    img(src='_imgs/left.png')
-                  #carousel_inner
-                    ul#carousel_ul
-                      section#thumbnails
-                    section.details(style='display: none;')
-                      h2
-                        | Title:
-                        span#title
-                      h3
-                        | Author:
-                        span#authorName
-                      h4
-                        | Description:
-                        span#description
-                  #right_scroll
-                    img(src='_imgs/right.png')
-                //
-                   Tab 2 
-                #scout_lib.carousel_container
-                  #left_scroll
-                    img(src='_imgs/left.png')
-                  #carousel_inner
-                    ul#carousel_ul
-                      section#thumbnails
-                    section.details(style='display: none;')
-                      h2
-                        | Title:
-                        span#title
-                      h3
-                        | Author:
-                        span#authorName
-                      h4
-                        | Description:
-                        span#description
-                  #right_scroll
-                    img(src='_imgs/right.png')
-                //
-                   Tab 3 
-                #queue_lib.carousel_container
-                  #left_scroll
-                    img(src='_imgs/left.png')
-                  #carousel_inner
-                    ul#carousel_ul
-                      section#thumbnails
-                    section.details(style='display: none;')
-                      h2
-                        | Title:
-                        span#title
-                      h3
-                        | Author:
-                        span#authorName
-                      h4
-                        | Description:
-                        span#description
-                  #right_scroll
-                    img(src='_imgs/right.png')
-              .authormetrics
-                #metric_tabs.tabs
-                  ul
-                    a(href='#')
-                      li Author Metrics
-                    a(href='/metrics')
-                      li Scout Metrics
-                .book_cover
-                  a(href='#')
-                    img(src='https://www.libboo.com//inhouse/book_image_cover/c8e51778-027c-11e2-8fab-1231390c5871_4.png')
-                //
-                   METRIC DROPDOWN MENUS 
-                .dropdowns
-                  form(name='menuform')
-                    select.metric_dropdown(name='Graph Options')
-                      option(value='1_to_all', selected='selected') Individual to Entire Library
-                      option(value='1_mood') Individual Mood Metrics
-                .dropdowns
-                  form(name='menuform2')
-                    select.metric_dropdown(name='Books')
-                      option(value='1') The Heart and the Fist
-                      option(value='2') Anonymous Book 2
-                //
-                   Metric Graphs/Charts 
-                #total_metric
-                  canvas#metricsChart(width='630', height='360')
-    #footwrap
-      .social_buttons
-        span.st_twitter_large(displaytext='Tweet')
-        span.st_facebook_large(displaytext='Facebook')
-        span.st_googleplus_large(displaytext='Google +')
-        span.st_linkedin_large(displaytext='LinkedIn')
-        span.st_pinterest_large(displaytext='Pinterest')
+                  img(src='https://www.libboo.com//inhouse/book_image_cover/c8e51778-027c-11e2-8fab-1231390c5871_4.png')
+              //
+                 METRIC DROPDOWN MENUS 
+              .dropdowns
+                form(name='menuform')
+                  select.metric_dropdown(name='Graph Options')
+                    option(value='1_to_all', selected='selected') Individual to Entire Library
+                    option(value='1_mood') Individual Mood Metrics
+              .dropdowns
+                form(name='menuform2')
+                  select.metric_dropdown(name='Books')
+                    option(value='1') The Heart and the Fist
+                    option(value='2') Anonymous Book 2
+              //
+                 Metric Graphs/Charts 
+              #total_metric
+                canvas#metricsChart(width='630', height='360')
+  #footwrap
+    .social_buttons
+      span.st_twitter_large(displaytext='Tweet')
+      span.st_facebook_large(displaytext='Facebook')
+      span.st_googleplus_large(displaytext='Google +')
+      span.st_linkedin_large(displaytext='LinkedIn')
+      span.st_pinterest_large(displaytext='Pinterest')

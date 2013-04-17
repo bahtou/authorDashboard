@@ -1,71 +1,44 @@
-!!! 5
-html
-  head
-    title talentBot.co
-    link(rel='stylesheet', type='text/css', href='_css/style.css')
-    link(href='http://fonts.googleapis.com/css?family=Dosis:200', rel='stylesheet', type='text/css')
-    link(href='http://fonts.googleapis.com/css?family=Josefin+Sans', rel='stylesheet', type='text/css')
-    link(href='http://fonts.googleapis.com/css?family=EB+Garamond', rel='stylesheet', type='text/css')
-    script(type='text/javascript', src='http://w.sharethis.com/button/buttons.js')
-    script(type='text/javascript')
-      stLight.options({publisher: "ur-cb388504-ac6d-94ca-99b3-7976bc6a12cf", doNotHash: false, doNotCopy: false, hashAddressBar: false});
-    script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
-    script(src='_js/Chart.min.js')
-    script(type='text/javascript', src='_js/metrics.js')
-  body
-    #header
-      #navbar
-        nav
-          ul#nav
-            a(href='#')
-              li Messages
-            a(href='#')
-              li Account
-            a(href='/')
-              li Back
-            ul.acct_dropdown
-              a(href='#')
-                li Account Settings
-              a(href='#')
-                li Privacy Settings
-              a(href='#')
-                li Login/out
-      h1
-        | scout
-        span#color Bot
-        | .co
-    #mainwrap
-      #wrappershadow
-        #wrapper
-          header
-          #container
-            #book_1
-              h1 As the Rain Falls
-              .chart_metric
-                canvas#rainFallsChart(width='400', height='300')
-              .card_metric
-                canvas#rainFallsCards(width='400', height='300')
-            .newBook
-              h1 Ghostwriter
-              .chart_metric
-                canvas#ghostwriterChart(width='400', height='300')
-              .card_metric
-                canvas#ghostwriterCards(width='400', height='300')
-            .newBook
-              h1 Inquest
-              .chart_metric
-                canvas#inquestChart(width='400', height='300')
-              .card_metric
-                canvas#inquestCards(width='400', height='300')
-            .newBook
-              h1 Reality is Leaking
-              .chart_metric
-                canvas#realityLeakingChart(width='400', height='300')
-              .card_metric
-                canvas#realityLeakingCards(width='400', height='300')
-            .newBook
-              h1 Jaded Hearts
-              .chart_metric
-                canvas#jadedChart(width='400', height='300')
-              .card_metric
-                canvas#jadedCards(width='400', height='300')
+extends layout
+
+block addToHead
+  script(src="_js/metrics.js")
+block addToList
+  li
+    a(href="/") Back
+
+block bodyContent
+  #mainwrap
+    #wrappershadow
+      #wrapper
+        header
+        #container
+          #book_1
+            h1 As the Rain Falls
+            .chart_metric
+              canvas#rainFallsChart(width='400', height='300')
+            .card_metric
+              canvas#rainFallsCards(width='400', height='300')
+          .newBook
+            h1 Ghostwriter
+            .chart_metric
+              canvas#ghostwriterChart(width='400', height='300')
+            .card_metric
+              canvas#ghostwriterCards(width='400', height='300')
+          .newBook
+            h1 Inquest
+            .chart_metric
+              canvas#inquestChart(width='400', height='300')
+            .card_metric
+              canvas#inquestCards(width='400', height='300')
+          .newBook
+            h1 Reality is Leaking
+            .chart_metric
+              canvas#realityLeakingChart(width='400', height='300')
+            .card_metric
+              canvas#realityLeakingCards(width='400', height='300')
+          .newBook
+            h1 Jaded Hearts
+            .chart_metric
+              canvas#jadedChart(width='400', height='300')
+            .card_metric
+              canvas#jadedCards(width='400', height='300')

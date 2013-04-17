@@ -1,51 +1,6 @@
 $(document).ready(function() {
 
-// DROPDOWN MENU--------------------------------//
-
-  // obj.dd.on('click', function(event) {
-  //   $(this).toggleClass('active');
-  //   return false;
-  // });
-
-  // $(function() {
-  //   var dd = new DropDown($('#dd'));
-  //   $('#nav').click(function() {
-  //     $('.acct_dropdown').removeClass('active');
-  //   });
-  // });
-
-  // $function DropDown(el) {
-  //   this.dd = el;
-  //   this.placeholder = this.dd.children('span');
-  //   this.opts = this.dd.find('ul.dropdown > li');
-  //   this.val = '';
-  //   this.index = -1;
-  //   this.initEvents();
-  // }
-
-  // DropDown.prototype = {
-  //   initEvents : function() {
-  //     var obj = this;
-
-  //     obj.dd.on('click', function(event) {
-  //       $(this).toggleClass('active');
-  //       return false;
-  //     });
-
-  //     obj.opts.on('click', function() {
-  //       var opt = $(this);
-  //       opj.val = opt.text();
-  //       opj.index = opt.index();
-  //       opj.placeholder.text(obj.val);
-  //     });
-  //   },
-  //   getValue : function() {
-  //     return this.val;
-  //   },
-  //   getIndex : function() {
-  //     return this.index;
-  //   }
-  // }
+// USER PROFILE DYNAMIC DATA--------------------//
 
 // CAROUSEL FUNCTIONALITY----------------------//
 
@@ -132,23 +87,21 @@ var carouselArray = [
     title: "The Heart and the Fist",
     authorName: "Eric Greitens",
     description: "THE HEART AND THE FIST shares one man's story of extraordinary leadership and service as both a humanitarian and a warrior. In a life lived at the raw edges of the human experience, Greitens has seen what can be accomplished when compassion and courage come together in meaningful service. As a Rhodes Scholar and Navy SEAL, Greitens worked alongside volunteers who taught art to street children in Bolivia and led US Marines who hunted terrorists in Iraq. He's learned from nuns who fed the destitute in one of Mother Teresa's homes for the dying in India, from aid workers who healed orphaned children in Rwanda, and from Navy SEALs who fought in Afghanistan. He excelled at the hardest military training in the world, and today he works with severely wounded and disabled veterans who are rebuilding their lives as community leaders at home. Greitens offers each of us a new way of thinking about living a meaningful life. We learn that to win any war, even those we wage against ourselves; to create and obtain lasting peace; to save a life; and even, simply to live with purpose requires us--every one of us--to be both good and strong."
-  },
-]
+  }
+];
 
 for (var i = 0; i < carouselArray.length; i++) {
-
-  var ul = document.getElementById("carousel_ul");  
-  var li = document.createElement("li");
+  var ul = document.getElementById("carousel_ul");
   var img = document.createElement("image");
+  var li = document.createElement('li');
   img.setAttribute("src", carouselArray[i].url);
-    img.setAttribute("class", "coverArt");
-    $(li).data('book', carouselArray[i])
-    li.className = "item";
+  img.setAttribute("class", "coverArt");
+  li.setAttribute("book", carouselArray[i]);
+  li.className = "item";
   li.appendChild(img);
   ul.appendChild(li);
-  
 }
- 
+
     $("li.item").on('mouseover', function() {
         
         var $this = $(this);
@@ -162,7 +115,7 @@ for (var i = 0; i < carouselArray.length; i++) {
         $("#authorName").text(book.authorName);
         $("#description").text(book.description);
 });
-      })
+      });
 
     $('li.item').on('mouseout', function() {
         $("#carousel_ul li:not(.selected)").stop(true, true).animate({opacity: 1.0});
@@ -180,7 +133,7 @@ $(".metric_dropdown").change(function() {
 
 });
   $("body").on("metric_filter_changed", function(e){
-    console.log(e.target.value);
+    console.log(e.target);
   });
 
 
@@ -293,7 +246,7 @@ $(".metric_dropdown").change(function() {
     //Function - Fires when the animation is complete
     onAnimationComplete : null
     
-  };
+  }
 
 
 // TABS ----------------------------//
