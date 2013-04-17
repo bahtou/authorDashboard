@@ -2,46 +2,58 @@ $(document).ready(function() {
 
 // USER PROFILE DYNAMIC DATA--------------------//
 
+  // var userArray = [
+  //   {
+  //     userName: "Eric Greitens",
+  //     userImg: "images/egreitens.png",
+  //     userBio: "Eric Greitens was born and raised in Missouri. After earning a Ph.D. as 
+  //           a Rhodes Scholar and serving as a humanitarian volunteer overseas, Eric 
+  //           joined the Navy SEALs. A boxing champion and a decorated combat veteran, he 
+  //           is the founder of the nonprofit The Mission Continues and the author of the 
+  //           New York Times bestseller The Heart and the Fist."
+  //   }
+  // ]
+
 // CAROUSEL FUNCTIONALITY----------------------//
 
-        //move he last list item before the first item. The purpose of this is if the user clicks to slide left he will be able to see the last item.
-        $('#carousel_ul li:first').before($('#carousel_ul li:last')); 
+        //move he last list items before the first item. The purpose of this is if the user clicks to slide left he will be able to see the last item.
+        $('.carousel_ul li:first').before($('.carousel_ul li:last')); 
              
         //when user clicks the image for sliding right        
-        $('#right_scroll img').click(function(){
+        $('.right_scroll img').click(function(){
         
             //get the width of the items ( i like making the jquery part dynamic, so if you change the width in the css you won't have o change it here too ) '
-            var item_width = $('#carousel_ul li').outerWidth() + 10;
+            var item_width = $('.carousel_ul li').outerWidth() + 10;
             
             //calculae the new left indent of the unordered list
-            var left_indent = parseInt($('#carousel_ul').css('left')) - item_width;
+            var left_indent = parseInt($('.carousel_ul').css('left')) - item_width;
             
             //make the sliding effect using jquery's anumate function '
-            $('#carousel_ul:not(:animated)').animate({'left' : left_indent},500,function(){    
+            $('.carousel_ul:not(:animated)').animate({'left' : left_indent},500,function(){    
                 
                 //get the first list item and put it after the last list item (that's how the infinite effects is made) '
-                $('#carousel_ul li:last').after($('#carousel_ul li:first')); 
+                $('.carousel_ul li:last').after($('.carousel_ul li:first')); 
                 
                 //and get the left indent to the default -210px
-                $('#carousel_ul').css({'left' : '-160px'});
+                $('.carousel_ul').css({'left' : '-160px'});
             }); 
         });
         
         //when user clicks the image for sliding left
-        $('#left_scroll img').click(function(){
+        $('.left_scroll img').click(function(){
             
-            var item_width = $('#carousel_ul li').outerWidth() + 10;
+            var item_width = $('.carousel_ul li').outerWidth() + 10;
             
             /* same as for sliding right except that it's current left indent + the item width (for the sliding right it's - item_width) */
-            var left_indent = parseInt($('#carousel_ul').css('left')) + item_width;
+            var left_indent = parseInt($('.carousel_ul').css('left')) + item_width;
             
-            $('#carousel_ul:not(:animated)').animate({'left' : left_indent},500,function(){    
+            $('.carousel_ul:not(:animated)').animate({'left' : left_indent},500,function(){    
             
             /* when sliding to left we are moving the last item before the first list item */            
-            $('#carousel_ul li:first').before($('#carousel_ul li:last')); 
+            $('.carousel_ul li:first').before($('.carousel_ul li:last')); 
             
             /* and again, when we make that change we are setting the left indent of our unordered list to the default -210px */
-            $('#carousel_ul').css({'left' : '-160px'});
+            $('.carousel_ul').css({'left' : '-160px'});
             });
             
             
@@ -92,7 +104,9 @@ var carouselArray = [
 
 for (var i = 0; i < carouselArray.length; i++) {
 
-  var ul = document.getElementById("carousel_ul");  
+  // var ul = document.getElementById("carousel_ul");  
+
+  var $ul = $(".carousel_ul");
   var li = document.createElement("li");
   var img = document.createElement("image");
   img.setAttribute("src", carouselArray[i].url);
@@ -100,7 +114,7 @@ for (var i = 0; i < carouselArray.length; i++) {
     $(li).data('book', carouselArray[i])
     li.className = "item";
   li.appendChild(img);
-  ul.appendChild(li);
+  $ul.append(li);
 }
  
     $("li.item").on('mouseover', function() {
@@ -108,18 +122,18 @@ for (var i = 0; i < carouselArray.length; i++) {
         var $this = $(this);
 
         $this.addClass("selected");
-        $("#carousel_ul li:not(.selected)").stop(true, true).animate({opacity: 0.3});
+        $(".carousel_ul li:not(.selected)").stop(true, true).animate({opacity: 0.3});
         $(".details").show();
         $(".details").stop(true, true).animate({top: 240}, function(){
         var book = $this.data('book');
-        $("#title").text(book.title);
-        $("#authorName").text(book.authorName);
-        $("#description").text(book.description);
+        $(".title").text(book.title);
+        $(".authorName").text(book.authorName);
+        $(".description").text(book.description);
 });
       })
 
     $('li.item').on('mouseout', function() {
-        $("#carousel_ul li:not(.selected)").stop(true, true).animate({opacity: 1.0});
+        $(".carousel_ul li:not(.selected)").stop(true, true).animate({opacity: 1.0});
         $(this).removeClass("selected");
         
         $(".details").stop(true, true).animate({top: -1000}, function(){

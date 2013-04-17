@@ -294,6 +294,7 @@ Header
 	font-family: 'Dosis', sans-serif;
 	font-size: 18px;
 	border-left: 1px solid #f0f0f0;
+	/*box-shadow: 1px 0 15px 2px rgba(0, 0, 0, 0.3);*/
 	}
 
 .tabs li:hover, .tabs li.active {
@@ -313,14 +314,14 @@ Carousel
 	position: relative;
 	}
 
-#carousel_inner {
+.carousel_inner {
 	float:left; /* important for inline positioning */
 	width:641px; /* important (this width = width of list item(including margin) * items shown */ 
 	overflow: hidden;  /* important (hide the items outside the div) */
 	background: #F0F0F0;
 	}
 
-#carousel_ul {
+.carousel_ul {
 	position:relative;
 	left:-160px; /* important (this should be negative number of list items width(including margin) */
 	list-style-type: none; /* removing the default styling for unordered list items */
@@ -330,7 +331,7 @@ Carousel
 	padding-bottom:10px;
 	}
 
-#carousel_ul li{
+.carousel_ul li{
 	float: left; /* important for inline positioning of the list items */                                    
 	width:150px;  /* fixed width, important */
 	padding:0px;
@@ -342,20 +343,20 @@ Carousel
 	margin-right:5px; 
 	}
 
-#carousel_ul li a:hover, .item:hover {
+.carousel_ul li a:hover, .item:hover {
 	border-top: 4px solid #559ACC;
 	box-shadow:	box-shadow: 0px 12px 26px 4px rgba(0, 0, 0, 0.3);
 ;
 }
 
-#carousel_ul li img {
+.carousel_ul li img {
 .margin-bottom:-4px; /* IE is making a 4px gap bellow an image inside of an anchor (<a href...>) so this is to fix that*/
 	cursor:pointer;
 	cursor: hand; 
 	border:0px; 
 	}
 
-#left_scroll, #right_scroll {
+.left_scroll, .right_scroll {
 	float:left; 
 	height:130px; 
 	width:15px;
@@ -363,7 +364,7 @@ Carousel
 	background:#f0f0f0;
 	}
 
-#left_scroll img, #right_scroll img {
+.left_scroll img, .right_scroll img {
 	cursor: pointer;
 	cursor: hand;
 	}
