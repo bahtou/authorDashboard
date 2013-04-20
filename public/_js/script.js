@@ -267,7 +267,7 @@ $(".metric_dropdown").change(function() {
 // TABS ----------------------------//
 
 $(".tabs a").click(function(e){
-  e.preventDefault();
+  // e.preventDefault();
 
   var $this = $(this);
   var containerId = $this.data("container");

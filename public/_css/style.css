@@ -16,7 +16,7 @@ body {
 	
 #mainwrap {
 	width: 100%;
-	background-image: url('images/robby_robot.png');
+	background-image: url('../_imgs/robby_robot.png');
 	background-repeat: no-repeat;
 	background-position: left center;
 	background-size: 27%;
@@ -36,7 +36,6 @@ body {
 #wrapper {
 	width: 960px;
 	margin: 0 auto;
-	margin-top: 0px;
 	background: #f0f0f0;
   padding: 35px 0;
   overflow: hidden;
@@ -82,23 +81,22 @@ Header
 *************/
 
 #header {
-	font-size: 2.6em;
+	/*font-size: 2.6em;*/
 	color: #f0f0f0;
 	width: 100%;
 	background: #111;
-	padding-top: 0px;
-	line-height: 1.25em;
+	/*line-height: 1.25em;*/
 	position: fixed;
 	z-index: 5;
 	text-align: center;
-	box-shadow: 0px 12px 26px 4px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 12px 26px 4px rgba(0, 0, 0, 0.3);
 	}
 
-#header h1 {
+.brand {
 	font-family: 'Josefin Sans', sans-serif;
 	}
 	
-#color {
+.color {
 	color: #922519;
 	}
 
@@ -232,7 +230,12 @@ Header
 	margin-right: 10px;
 	}
 	
+.editButtons {
+	float: right;
+	}
+
 .buttons {
+	float: right;
 	text-align: center;
 	background-color: #AFAFAF;
 	border: 1px solid #222;
@@ -242,7 +245,6 @@ Header
 	font-size: 15px;
 	line-height: 29.5px;
 	border-radius: 16px;
-	float: right;
 	margin-top: 130px;
 	margin-right: 20px;
 	}
@@ -322,11 +324,9 @@ Carousel
 	}
 
 .carousel_ul {
-	position:relative;
+	/*position:relative;*/
 	left:-160px; /* important (this should be negative number of list items width(including margin) */
 	list-style-type: none; /* removing the default styling for unordered list items */
-	margin: 0px;
-	padding: 0px;
 	width:9999px; /* important */
 	padding-bottom:10px;
 	}
@@ -334,7 +334,6 @@ Carousel
 .carousel_ul li{
 	float: left; /* important for inline positioning of the list items */                                    
 	width:150px;  /* fixed width, important */
-	padding:0px;
 	height:226px;
 	background: #f0f0f0;
 	margin-top:4px;
@@ -352,8 +351,7 @@ Carousel
 .carousel_ul li img {
 .margin-bottom:-4px; /* IE is making a 4px gap bellow an image inside of an anchor (<a href...>) so this is to fix that*/
 	cursor:pointer;
-	cursor: hand; 
-	border:0px; 
+	cursor: hand;
 	}
 
 .left_scroll, .right_scroll {
