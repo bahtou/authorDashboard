@@ -109,7 +109,7 @@ Header
 	font-family: 'Dosis', sans-serif;
 	text-align: left;
 	/*padding-left: 10px;*/
-	padding-bottom: 15px;
+	padding-bottom: 18px;
 }
 
 #nav a{
@@ -120,8 +120,8 @@ Header
 	display: inline;
 	padding-right: 20px;
 	padding-left: 20px;
+	padding-bottom: 6px;
 	border-right: 1px solid #559ACC;
-
 }
 
 #nav li a:hover {
@@ -182,6 +182,7 @@ Header
 
 #nav li ul, .acct_dropdown {
 	width: 220px;
+	margin-top: -5px;
 	/*float: right;*/
 }
 
@@ -216,22 +217,38 @@ Header
 	margin-top: 120px;
 	}
 	
-.profileblurb h1 {
+.profileblurb h1, .userName {
 	border-left: 6px solid #559ACC;
 	padding: 2px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 1.8em;
+	color: #222;
 	}
 	
-.profileblurb img {
+.profileblurb img, .userImage {
 	float: left;
 	border-top: 1px solid #559ACC;
 	}	
 	
-.profileblurb p {
+.profileblurb p, .userBio {
 	float: right;
 	width : 66%;
-	margin-right: 10px;
+	margin-right: 16px;
+
+	margin-top: -10px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 1.1em;
+	text-align: left;
+	padding: 10px;
+	color: #555;
 	}
-	
+
+#prof_buttons {
+	margin-right: 4px;
+	margin-top: -120px;
+	float: right;
+}
+
 .buttons {
 	text-align: center;
 	background-color: #AFAFAF;
@@ -243,8 +260,9 @@ Header
 	line-height: 29.5px;
 	border-radius: 16px;
 	float: right;
-	margin-top: 130px;
+	/*margin-top: 130px;*/
 	margin-right: 20px;
+	box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
 	}
 	
 .buttons h3 {
@@ -259,7 +277,7 @@ Header
 .buttons:active {
 	position: relative;
 	top: 1px;
-	box-shadow: 1px 1px 2 px rgba(0, 0, 0, 0.4) inset;
+	box-shadow: none;
 	border-color: #111;
 	}
 	
@@ -270,7 +288,7 @@ Header
 	padding: 10px;
 	}	
 	
-.tabs ul {
+.tabs ul, .metric_tabs ul {
 	margin-top: -10px;
 	margin-left: -21px;
 	float: left;
@@ -284,7 +302,7 @@ Header
 	height: 33px;
 	}
 
-.tabs ul li {
+.tabs ul li, .metric_tabs ul li {
 	display: inline-block;
 	position: relative;
 	padding: 0px 20px;
@@ -297,7 +315,7 @@ Header
 	/*box-shadow: 1px 0 15px 2px rgba(0, 0, 0, 0.3);*/
 	}
 
-.tabs li:hover, .tabs li.active {
+.tabs li:hover, .tabs li.active, .metric_tabs li:hover, .metric_tabs li.active {
 	background: #559ACC;
 	}
 
@@ -406,7 +424,18 @@ Carousel
 	margin-top:56px;
 	width: 20%;
 	box-shadow: 1px 0 15px 2px rgba(0, 0, 0, 0.3);
+	border: 1px solid #afafaf;
+	opacity: 0.9;
+}
 
+.book_cover a img:hover {
+	opacity: 1.0;
+}
+
+.book_cover a img:active {
+	box-shadow: none;
+	top: 1px;
+	position: relative;
 }
 
 #total_metric {
@@ -434,10 +463,6 @@ Carousel
 	text-align: center;
 	font-family: 'Dosis', sans-serif;
 	font-size: 18px;
-}
-
-.drop_down_head {
-	text-decoration: bold;
 }
 
 #book_1 {

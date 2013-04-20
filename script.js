@@ -2,17 +2,47 @@ $(document).ready(function() {
 
 // USER PROFILE DYNAMIC DATA--------------------//
 
-  // var userArray = [
-  //   {
-  //     userName: "Eric Greitens",
-  //     userImg: "images/egreitens.png",
-  //     userBio: "Eric Greitens was born and raised in Missouri. After earning a Ph.D. as 
-  //           a Rhodes Scholar and serving as a humanitarian volunteer overseas, Eric 
-  //           joined the Navy SEALs. A boxing champion and a decorated combat veteran, he 
-  //           is the founder of the nonprofit The Mission Continues and the author of the 
-  //           New York Times bestseller The Heart and the Fist."
-  //   }
-  // ]
+  var userArray = [
+    {
+      userName: "Eric Greitens",
+      userImg: "https://www.libboo.com//inhouse/user_photo/dee2f42e-027b-11e2-8fab-1231390c5871_4.png?s=1",
+      userBio: "Eric Greitens was born and raised in Missouri. After earning a Ph.D. as a Rhodes Scholar and serving as a humanitarian volunteer overseas, Eric joined the Navy SEALs. A boxing champion and a decorated combat veteran, he is the founder of the nonprofit The Mission Continues and the author of the New York Times bestseller The Heart and the Fist."
+    }
+  ]
+
+  // userArray.forEach(function(i) {
+
+  for (var i = 0; i < userArray.length; i++) {
+
+    var $prof = $(".profileblurb");
+    var h1 = document.createElement("h1");
+    var userImg = document.createElement("img");
+    var p = document.createElement("p");
+
+    h1.className = "userName";
+    userImg.className = "userImage";
+    p.className = "userBio";
+    
+    console.log(userArray[i]);
+
+    $("<div class = 'userName' />").text(userArray[i].userName).appendTo('.profileblurb');
+    $("<img class = 'userImage' />").attr("src", userArray[i].userImg).appendTo('.profileblurb');
+    $("<div class = 'userBio' />").text(userArray[i].userBio).appendTo('.profileblurb');
+  };
+
+
+   //    h1.className = "userName";
+   //      $prof.append(h1);
+   //        // (h1).data('person', userArray[i]);
+   //    userImg.className = "userImage";
+   //      $prof.append(userImg);
+   //        // userImg.setAttribute("src", userArray[i].url);
+   //          // img.setAttribute("class");
+   //    p.className = "userBio";
+   //      $prof.append(p);
+   //        // $(p).data('person', userArray[i]);
+
+   // };
 
 // CAROUSEL FUNCTIONALITY----------------------//
 
